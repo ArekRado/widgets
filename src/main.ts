@@ -4,7 +4,7 @@ import { getUrlParams } from './getUrlParams'
 import { NBPexchangeratesResponse } from './type'
 import { setHtml } from './setHtml'
 
-const { ticker, currency } = getUrlParams()
+const { ticker, currency, currencyBuySell } = getUrlParams()
 
 let error: null | { type: string; data: string } = null
 
@@ -22,13 +22,18 @@ if (ticker) {
           data: 'wrong api response',
         }
       } else {
+        const mid =
+          Math.floor(
+            (currencyBuySell === 'sell' ? 1 / data.mid : data.mid) * 100,
+          ) / 100
+
         setHtml(`
         <div>
           <div>
             ${response.code}
           </div>
           <div>
-            ${data.mid}
+            ${mid}
           </div>
         </div>
         `)

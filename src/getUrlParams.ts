@@ -3,6 +3,8 @@ export const getUrlParams = () => {
 
   return {
     currency: search.get('currency'),
+    currencyBuySell: search.get('currencyBuySell'),
+
     ticker: search.get('ticker'),
   }
 }
