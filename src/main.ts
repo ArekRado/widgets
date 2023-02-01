@@ -11,7 +11,7 @@ let error: null | { type: string; data: string } = null
 if (ticker) {
   // todo
 } else if (currency) {
-  fetch(`http://api.nbp.pl/api/exchangerates/rates/A/${currency}?format=json`)
+  fetch(`//api.nbp.pl/api/exchangerates/rates/A/${currency}?format=json`)
     .then((data) => data.json())
     .then((response: NBPexchangeratesResponse) => {
       const data = response?.rates?.[0]
