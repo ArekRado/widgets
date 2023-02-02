@@ -29,12 +29,12 @@ if (ticker) {
 
         setHtml(`
         <div>
-          <div>
+          <h2>
             ${response.code}
-          </div>
-          <div>
+          </h2>
+          <h1>
             ${mid}
-          </div>
+          </h1>
         </div>
         `)
       }
